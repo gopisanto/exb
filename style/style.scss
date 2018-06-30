@@ -1,0 +1,239 @@
+body{
+  width: 1920px;
+  height: 1080px;
+  background-color: #f3f3f3;
+}
+.error {
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  color: red;
+  width: 100%;
+}
+.container {
+  display: flex;
+
+  .photos-container {
+    width: 1196px;
+    height: 688px;
+    border-radius: 2px;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.24), 0 0 2px 0 rgba(0, 0, 0, 0.12);
+    border: solid 1px transparent;
+    background-image: linear-gradient(#ffffff, #ffffff), linear-gradient(to bottom, #ffffff, rgba(255, 255, 255, 0) 20%, rgba(255, 255, 255, 0));
+    background-origin: border-box;
+    display: flex;
+    padding-left: 24px;
+    flex-wrap: wrap;
+    margin-top: 24px;
+    overflow: auto;
+
+    img {
+      width: 178px;
+      height: 140px;
+      margin: 10px 5px 0 0;
+    }
+  }
+
+  .albums-container {
+    padding-left: 24px;
+    border-radius: 2px;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.24), 0 0 2px 0 rgba(0, 0, 0, 0.12);
+    border: solid 1px transparent;
+    background-image: linear-gradient(#ffffff, #ffffff), linear-gradient(to bottom, #ffffff, rgba(255, 255, 255, 0) 20%, rgba(255, 255, 255, 0));
+    background-origin: border-box;
+    height: 250px;
+    width: 1196px;
+    position: relative;
+
+    .add-album-modal {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      opacity: 1;
+      visibility: visible;
+      transform: scale(1.0);
+      transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+
+      .add-album-content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: white;
+        padding: 20px;
+        width: 300px;
+        height: 80px;
+        border-radius: 1px;
+
+        label {
+          margin-right: 10px;
+        }
+
+        div {
+          margin-top: 25px;
+          display: flex;
+          justify-content: flex-end;
+
+          button {
+            margin-right: 10px;
+          }
+        }
+      }
+    }
+
+    .add-album {
+      position: absolute;
+      bottom: -10px;
+      right: 15px;
+      cursor: pointer;
+    }
+
+    .selectAll {
+      position: absolute;
+      top: 24px;
+      right: 24px;
+    }
+
+    .albums {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 5px;
+      overflow: auto;
+
+      .album {
+        height: 60px;
+        width: 170px;
+        padding: 5px;
+        margin: 10px 5px 0 0;
+        display: flex;
+
+        label {
+          margin-right: 10px;
+        }
+
+        input {
+          min-width: 18px;
+          min-height: 18px;
+          max-width: 18px;
+          max-height: 18px;
+          opacity: 0.54;
+          background-color: #010101;
+        }
+      }
+    }
+  }
+
+  .user-container {
+    width: 400px;
+    height: 982px;
+    border-radius: 2px;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.24), 0 0 2px 0 rgba(0, 0, 0, 0.12);
+    border: solid 1px transparent;
+    background-image: linear-gradient(#ffffff, #ffffff), linear-gradient(to bottom, #ffffff, rgba(255, 255, 255, 0) 20%, rgba(255, 255, 255, 0));
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+    margin-right: 10px;
+
+    .user {
+      width: 400px;
+      height: 89px;
+      border-bottom: 1px solid gray;
+      display: flex;
+
+      &.selected {
+        background-color: #26a9e0;
+      }
+
+      img {
+        height: 40px;
+        width: 40px;
+      }
+
+      section {
+        padding-top: 13px;
+      }
+    }
+
+    .app-bar-bg {
+      width: 400px;
+      height: 64px;
+      background-color: #f9f9f9;
+      box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.12);
+      position: relative;
+      .left-arrow {
+        position: absolute;
+        top: 12px;
+        left: 16px;
+      }
+      .search-input {
+        position: absolute;
+        top: 13px;
+        left: 64px;
+        width: 200px;
+        height: 20px;
+        border: 0;
+
+        &:focus {
+          border: 0;
+        }
+      }
+      .close {
+        position: absolute;
+        right: 12px;
+        top: 16px;
+        cursor: pointer;
+      }
+      .search-container {
+        width: 384px;
+        height: 48px;
+        border-radius: 2px;
+        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.24), 0 0 2px 0 rgba(0, 0, 0, 0.12);
+        border: solid 1px transparent;
+        background-image: linear-gradient(#ffffff, #ffffff), linear-gradient(to bottom, #ffffff, rgba(255, 255, 255, 0) 20%, rgba(255, 255, 255, 0));
+        background-origin: border-box;
+        background-clip: content-box, border-box;
+        margin: 8px;
+
+        img {
+          cursor: pointer;
+        }
+      }
+      .users {
+        width: 52px;
+        height: 28px;
+        font-family: Roboto;
+        font-size: 20px;
+        font-weight: 500;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.4;
+        letter-spacing: normal;
+        color: #333333;
+        position: absolute;
+        left: 24px;
+        top: 16px;
+      }
+      .card {
+        width: 384px;
+        height: 48px;
+        border-radius: 2px;
+        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.24), 0 0 2px 0 rgba(0, 0, 0, 0.12);
+        border: solid 1px transparent;
+        background-image: linear-gradient(#ffffff, #ffffff), linear-gradient(to bottom, #ffffff, rgba(255, 255, 255, 0) 20%, rgba(255, 255, 255, 0));
+        background-origin: border-box;
+        background-clip: content-box, border-box;
+      }
+      .search {
+        width: 24px;
+        height: 24px;
+        position: absolute;
+        right: 24px;
+        top: 24px;
+        cursor: pointer;
+      }
+    }
+  }
+}
